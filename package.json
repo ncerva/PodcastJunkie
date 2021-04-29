@@ -1,5 +1,5 @@
 {
-  "name": "PodcastJunkie",
+  "name": "podcastjunkie",
   "version": "1.0.0",
   "description": "## Group Members: ### Nicole Tribo, Reid Johnson, & Nayeli Cervantes",
   "main": "index.js",
@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/ncerva/PodcastJunkie/issues"
   },
-  "homepage": "https://github.com/ncerva/PodcastJunkie#readme"
+  "homepage": "https://github.com/ncerva/PodcastJunkie#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  }
 }
