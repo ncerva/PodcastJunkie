@@ -32,7 +32,11 @@
       <a class="navbar-item">
         My Stash
       </a>
-
+    {{#if loggedIn}}
+    <button id="logout" class="navbar-item">Logout</button>
+    {{else}}
+    <a href="/login">Login</a>
+    {{/if}}
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
@@ -48,11 +52,14 @@
   </div>
 </nav>
 <!-- end navbar-->
+
 <body>
   <header>
     <h1>Podcast Junkie</h1>
   </header>
-  
+  <nav>
+    <a href="/">Home</a>
+  </nav>
   <main>
     <aside>
       <h2>" "</h2>
