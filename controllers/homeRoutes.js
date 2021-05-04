@@ -4,7 +4,7 @@ const router = require('express').Router();
 
 
 // Login route
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');
       return;
@@ -12,5 +12,12 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
   
-
+  
+router.get('/search', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  res.render('search');
+});
 module.exports = router;
