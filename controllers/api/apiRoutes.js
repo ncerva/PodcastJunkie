@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { Client } = require('podcast-api');
 
-const client = Client({
-  apikey: /*process.env.API_KEY ||*/ null,
-});
+// const client = Client({
+//   apikey: /*process.env.API_KEY ||*/ null,
+// });
 
 
 

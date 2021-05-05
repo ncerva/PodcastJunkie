@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Client } = require('podcast-api');
+const dotenv = require('dotenv').config();
 
 const client = Client({
-  apiKey: process.env.API_KEY,
+  apiKey: /*process.env.API_KEY ||*/ null,
 })
 
 
@@ -33,7 +34,7 @@ router.get('/', (req, res) => {
 router.get('/results', (req, res) => {
   try {
     const searchResults = client.search({
-      q: 'elon',
+      q: 'murder',
       sort_by_date: 0,
       type: 'episode',
       offset: 0,
