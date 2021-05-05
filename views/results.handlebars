@@ -1,0 +1,61 @@
+<!-- Append body -->
+<div class="columns is-multiline">
+
+  <!-- begin partial -->
+  {{#each podcasts as |podcast| }}
+  <div class="column is-full">
+    <div class="container">
+      <article class="media">
+        <figure class="media-left">
+          <a href="{{podcast.link}}">
+            <p class="image is-128x128" note="thumbnail">
+              <img
+                src="{{podcast.thumbnail}}">
+            </p>
+          </a>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>{{podcast.title_original}}</strong> <small>{{podcast.publisher_original}}</a></small> <small>Number of
+                Episodes: {{podcast.total_episodes}}</small>
+              <br>
+              {{podcast.description_original}}
+            </p>
+          </div>
+          <nav class="level">
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Like</p>
+                <p class="title"><i class="fas fa-heart"></i></p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Dislike</p>
+                <p class="title"><i class="fas fa-heart-broken"></i></p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Add to my stash</p>
+                <p class="title"><i class="fas fa-plus"></i></p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Likes</p>
+                <p class="title">789</p>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </article>
+    </div>
+  </div>
+  {{/each}}
+
+  <!-- end partial -->
+
+</div>
+<!--  end body   -->
