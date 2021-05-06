@@ -1,34 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="columns is-multiline" id="card-container">
+    <div class="column is-full spacer">
+      </div>
+  </div>
+  <div class="column is-full">
+    <div class="columns">
+      <div class="column is-half">
+        <!-- Login -->
+        <p>Login</p>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Podcast Junkie</title>
-    <link rel="stylesheet" href="./css/style.css">
-    
-
-<body>
-    <header>
-        <h1>PodcastJunkie</h1>
-    </header>
-    <nav>
-        <a href="/">Home</a>
-        {{#if loggedIn}}
-        <button id="logout" class="btn-no-style">Logout</button>
-        {{else}}
-        <a href="/login">Login</a>
-        {{/if}}
-    </nav>
-    <main>
-        <aside>
-            <h2>My Stash</h2>
-        </aside>
-        <div class="stash">
-            {{{body}}}
+      <div class="field">
+          <p class="control">
+            <input id="email-login" class="input" type="text" placeholder="Email">
+          </p>
         </div>
-    </main>
-    {{#if loggedIn}}
-    <script src="./js/logout.js"></script>
-    {{/if}}
-</body>
+      <div class="field">
+          <p class="control">
+            <input id="username-login" class="input" type="text" placeholder="Username">
+          </p>
+        </div>
+        <div class="field">
+          <p class="control">
+            <input id="password-login" class="input" type="password" placeholder="Password">
+          </p>
+        </div>
+        <div class="field">
+          <p class="control">
+            <button id="login-submit" class="button has-background-danger-dark has-text-white">
+              Login
+            </button>
+          </p>
+        </div>
+
+
+      </div>
+      <div class="column is-half" is="signup-col">
+        <p>Sign up</p>
+        <!-- Signup -->
+        <div class="field">
+          <p class="control">
+            <input class="input" id="email-signup" type="text" placeholder="Email">
+          </p>
+        </div>
+        <div class="field">
+          <p class="control">
+            <input class="input" id="username-signup" type="text" placeholder="Username">
+          </p>
+        </div>
+        <div class="field">
+          <p class="control">
+            <input class="input" id="password-signup" type="password" placeholder="Password">
+          </p>
+        </div>
+        <div class="field">
+          <p class="control">
+            <button id="signup-submit" class="button has-background-danger-dark has-text-white">
+              Sign-up
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="./js/login.js"></script>
