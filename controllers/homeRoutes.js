@@ -3,11 +3,8 @@ const { Client } = require('podcast-api');
 const dotenv = require('dotenv').config();
 
 const client = Client({
-  apiKey: /*process.env.API_KEY ||*/ null,
-})
-
-
-
+  apiKey: /*process.env.API_KEY ||*/ null
+});
 
 
 // Login route
@@ -19,24 +16,25 @@ router.get('/', (req, res) => {
   res.render('login');
 });
 
-
-// router.get('/search', (req, res) => {
-//   if (req.session.loggedIn) {
-//     res.redirect('/');
-//     return;
-//   }
-//   res.render('search');
-// });
-// module.exports = router;
+router.get('/search', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  res.render('search');
+});
+module.exports = router;
 
 
 
 router.get('/results', (req, res) => {
+  // const keyword = JSON.parse(localStorage.getItem('keyword'));
+  // const genre = JSON.parse(localStorage.getItem('genres'));
   try {
     const searchResults = client.search({
-      q: 'murder',
+      q: 'wine',
       sort_by_date: 0,
-      type: 'episode',
+      type: 'podcast',
       offset: 0,
       published_after: 0,
       only_in: 'title,description',
@@ -45,6 +43,7 @@ router.get('/results', (req, res) => {
     })
       .then((response) => {
         const podcasts = response.data.results;
+        // res.json(podcasts);
         res.render('results', {
           podcasts
         });
@@ -54,30 +53,6 @@ router.get('/results', (req, res) => {
     res.status(500).json(err);
   }
 });
-
-/*
-router.get('/results', (req, res) => {
-  try {
-    const searchResults = client.search({
-      q: 'murder',
-      sort_by_date: 0,
-      type: 'episode',
-      offset: 0,
-      published_after: 0,
-      only_in: 'title,description',
-      language: 'English',
-      safe_mode: 0,
-    })
-      .then((response) => {
-        const podcasts = response.data.results;
-        console.log(podcasts);
-      });
-  }
-  catch (err) {
-    res.status(500).json(err);
-  }
-});
-*/
 
 
 module.exports = router;
