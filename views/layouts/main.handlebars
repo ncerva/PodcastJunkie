@@ -33,44 +33,24 @@
       <a class="navbar-item">
         My Stash
       </a>
-    {{#if loggedIn}}
-    <button id="logout" class="navbar-item">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light">
-            Log in
-          </a>
-        </div>
+    <div class="navbar-item">
+      <div class="buttons">
+        {{#if loggedIn}}  
+      <a id="logout" class="button is-danger is-outlined is-light">Logout</a>
+        {{else}}
+      <a href="/login" class="button is-danger is-outlined is-light">Log in</a>
+        {{/if}}
       </div>
     </div>
   </div>
 </nav>
 <!-- end navbar-->
 
-<body>
-  <header>
-    <h1>Podcast Junkie</h1>
-  </header>
-  <nav>
-    <a href="/">Home</a>
-  </nav>
-  <main>
-    <aside>
-      <h2>" "</h2>
-    </aside>
-    <div>
       {{!-- Append body --}}
       {{{body}}}
       {{!-- end body  --}}
-    </div>
-  </main>
 </body>
-
+{{#if loggedIn}}
+<script src="./js/logout.js"></script>
+{{/if}}
 </html>
