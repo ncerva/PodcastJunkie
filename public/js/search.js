@@ -1,31 +1,30 @@
 //create async event
+
 //need actual fetch
 const searchSubmitBtn = document.querySelector('#search-submit');
 const keywordInput = document.querySelector('#keyword-input');
 const genreSelect = document.querySelector('#genre-select');
 
-// const searchHandler = (event) => {
-//   event.preventDefault();
-
-//   const keyword = keywordInput.value.trim();
-//   const genres = genreSelect.value.trim();
-
-//   if (!keyword) {
-//     alert('Must enter valid keyword!');
-//   } else {
-//   localStorage.setItem('keyword', JSON.stringify(keyword));
-//   localStorage.setItem('genres', JSON.stringify(genres));
-//   location.replace('/results');
-//   keywordInput.value = '';
-//   }
-// }
 
 const searchHandler = async (event) => {
   event.preventDefault();
 
   const keyWord = keywordInput.value.trim();
-
-  if (keyWord) {
+  const genre = genreSelect.value.trim();
+  if (keyWord && genre){
+    const response = await fetch(`/results/${genre}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (response.ok) {
+      console.log(response);
+      location.replace(`/results/${keyWord}/${genre}`);
+    } else {
+      alert(response.statusText);
+    }
+  } else if (keyWord) {
     const response = await fetch(`/results/${keyWord}`, {
       method: 'GET',
       headers: {
@@ -34,10 +33,12 @@ const searchHandler = async (event) => {
     });
     if (response.ok) {
       console.log(response);
-      document.location.replace(`/results/${keyWord}`)
+      document.location.replace(`/results/${keyWord}`);
     } else {
-      alert('Invalid search!');
+      alert(response.statusText);
     }
+  } else {
+    alert ('Search requires a keyword')
   }
 };
 
