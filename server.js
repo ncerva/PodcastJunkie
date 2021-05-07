@@ -3,6 +3,10 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
+require('dotenv').config();
+console.log(process.env.DB_NAME);
+
+
 // const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
