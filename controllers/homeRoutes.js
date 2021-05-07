@@ -1,9 +1,8 @@
 const router = require('express').Router();
 const { Client } = require('podcast-api');
 const dotenv = require('dotenv').config();
-
 const client = Client({
-  apiKey: /*process.env.API_KEY ||*/ null
+  apiKey: process.env.API_KEY || null
 });
 
 
@@ -32,7 +31,7 @@ router.get('/results', (req, res) => {
   // const genre = JSON.parse(localStorage.getItem('genres'));
   try {
     const searchResults = client.search({
-      q: 'wine',
+      q: 'music',
       sort_by_date: 0,
       type: 'podcast',
       offset: 0,
