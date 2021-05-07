@@ -1,8 +1,5 @@
 //will need a query selector to add results to stash-- on a button
 
-
-//const { Client } = require ('podcast-api');
-
 const createStash = async (event) => {
   if (event.target.hasAttribute('data-stashItem')) {
     const stash = event.target.getAttribute('data-stashItem');
@@ -27,9 +24,17 @@ const createStash = async (event) => {
     }
   }
 };
-document.querySelector('#addBtn').addEventListener('click', createStash);
+
+const testBtn = (event) => {
+  if (event.target.dataset.stashItem) {
+    const stash = event.target.dataset.stashItem;
+    console.log('this has a mystery stash');
+  } else {
+    console.log('no stash bro');
+  }
+};
 
 
-//const client = Client({
-  //apiKey: process.env.
-//})
+// document.querySelector('#addBtn').addEventListener('click', createStash);
+
+document.querySelector('#addBtn').addEventListener('click', testBtn);
