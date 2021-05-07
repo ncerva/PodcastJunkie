@@ -26,12 +26,12 @@ module.exports = router;
 
 
 
-router.post('/results', (req, res) => {
+router.get('/results', (req, res) => {
   // const keyword = JSON.parse(localStorage.getItem('keyword'));
   // const genre = JSON.parse(localStorage.getItem('genres'));
   try {
     const searchResults = client.search({
-      q: req.body.keyWord,
+      q: 'wine',
       sort_by_date: 0,
       type: 'podcast',
       offset: 0,
@@ -52,6 +52,8 @@ router.post('/results', (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
 router.get('/results/:keyword', (req, res) => {
   // const keyword = JSON.parse(localStorage.getItem('keyword'));
   // const genre = JSON.parse(localStorage.getItem('genres'));
