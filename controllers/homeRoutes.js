@@ -26,12 +26,12 @@ module.exports = router;
 
 
 
-router.get('/results', (req, res) => {
+router.post('/results', (req, res) => {
   // const keyword = JSON.parse(localStorage.getItem('keyword'));
   // const genre = JSON.parse(localStorage.getItem('genres'));
   try {
     const searchResults = client.search({
-      q: 'music',
+      q: req.body.keyWord,
       sort_by_date: 0,
       type: 'podcast',
       offset: 0,
@@ -42,7 +42,7 @@ router.get('/results', (req, res) => {
     })
       .then((response) => {
         const podcasts = response.data.results;
-        // res.json(podcasts);
+        // res.json(podcasts);  //uncomment this line for insomnia test
         res.render('results', {
           podcasts
         });
@@ -52,6 +52,59 @@ router.get('/results', (req, res) => {
     res.status(500).json(err);
   }
 });
-
+router.get('/results/:keyword', (req, res) => {
+  // const keyword = JSON.parse(localStorage.getItem('keyword'));
+  // const genre = JSON.parse(localStorage.getItem('genres'));
+  try {
+    const searchResults = client.search({
+      q: req.params.keyword,
+      sort_by_date: 0,
+      type: 'podcast',
+      offset: 0,
+      published_after: 0,
+      only_in: 'title,description',
+      language: 'English',
+      safe_mode: 0,
+    })
+      .then((response) => {
+        const podcasts = response.data.results;
+        // res.json(podcasts);  //uncomment this line for insomnia test
+        res.render('results', {
+          podcasts
+        });
+      });
+  }
+  catch (err) {
+    res.status(500).json(err);
+  }
+});
+/*
+router.get('/results', (req, res) => {
+  // const keyword = JSON.parse(localStorage.getItem('keyword'));
+  // const genre = JSON.parse(localStorage.getItem('genres'));
+  try {
+    const searchResults = client.search({
+      q: req.body.keyWord,
+      sort_by_date: 0,
+      type: 'podcast',
+      offset: 0,
+      published_after: 0,
+      only_in: 'title,description',
+      language: 'English',
+      safe_mode: 0,
+    })
+      .then((response) => {
+        const podcasts = response.data.results;
+        // res.json(podcasts);  //uncomment this line for insomnia test
+        res.render('results', {
+          podcasts
+        });
+      });
+  }
+  catch (err) {
+    res.status(500).json(err);
+  }
+});
+*/
 
 module.exports = router;
