@@ -10,12 +10,10 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
 </head>
+<img class='centerimg' src="./assets/PodcastJunkie.png" width="75" height="25">
 <!-- navbar-->
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-    </a>
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
@@ -36,9 +34,9 @@
     <div class="navbar-item">
       <div class="buttons">
         {{#if loggedIn}}  
-      <a id="logout" class="button is-danger is-outlined is-light">Logout</a>
+      <button class="button is-light">Logout</button>
         {{else}}
-      <a href="/login" class="button is-danger is-outlined is-light">Log in</a>
+      <button href="/login" class="button is-dark">Login</button>
         {{/if}}
       </div>
     </div>
