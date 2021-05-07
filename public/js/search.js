@@ -8,12 +8,18 @@ const genreSelect = document.querySelector('#genre-select');
 
 const searchHandler = (event) => {
   event.preventDefault();
-  
 
+  const keyword = keywordInput.value.trim();
+  const genres = genreSelect.value.trim();
 
+  if (!keyword) {
+    alert('Must enter valid keyword!');
+  } else {
+  localStorage.setItem('keyword', JSON.stringify(keyword));
+  localStorage.setItem('genres', JSON.stringify(genres));
+  location.replace('/results');
+  keywordInput.value = '';
+  }
 }
 
-
-/* keyword only
-curl -X GET --include 'https://listen-api.listennotes.com/api/v2/search?q=star%20wars&sort_by_date=0&type=podcast&offset=0&only_in=title%2Cdescription&language=English&safe_mode=0' \
-  -H 'X-ListenAPI-Key: 109740b10f2444e08896a2ac78ddd11d'*/
+searchSubmitBtn.addEventListener('click', searchHandler);

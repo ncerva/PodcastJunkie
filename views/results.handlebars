@@ -4,7 +4,8 @@
   <!-- begin partial -->
   {{#each podcasts as |podcast| }}
   <div class="column is-full">
-    <div class="container">
+    <div class="container" data-stashItem="this works">
+      {{!-- <div class="container" data-stashItem="{{podcast}}"> --}}
       <article class="media">
         <figure class="media-left">
           <a href="{{podcast.link}}">
@@ -17,8 +18,9 @@
         <div class="media-content">
           <div class="content">
             <p>
-              <strong>{{podcast.title_original}}</strong> <small>{{podcast.publisher_original}}</a></small> <small>Number of
-                Episodes: {{podcast.total_episodes}}</small>
+              <strong>{{podcast.title_original}}</strong> <small>{{podcast.publisher_original}}</a></small>
+              <br>
+              <small>{{podcast.total_episodes}} episodes</small> 
               <br>
               {{podcast.description_original}}
             </p>
@@ -39,7 +41,7 @@
             <div class="level-item has-text-centered">
               <div>
                 <p class="heading">Add to my stash</p>
-                <p class="title"><i class="fas fa-plus"></i></p>
+                <p class="title "><a id="addBtn" data-stashItem="{{podcast}}"><i class="fas fa-plus"></i></a></p>
               </div>
             </div>
             <div class="level-item has-text-centered">
@@ -58,4 +60,5 @@
   <!-- end partial -->
 
 </div>
+<script src="./js/results.js"></script>
 <!--  end body   -->
