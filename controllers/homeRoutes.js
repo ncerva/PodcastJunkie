@@ -27,7 +27,6 @@ module.exports = router;
 
 
 router.get('/results', (req, res) => {
-
   try {
     const searchResults = client.search({
       q: 'wine',
@@ -54,8 +53,6 @@ router.get('/results', (req, res) => {
 
 
 router.get('/results/:keyword', (req, res) => {
-  // const keyword = JSON.parse(localStorage.getItem('keyword'));
-  // const genre = JSON.parse(localStorage.getItem('genres'));
   try {
     const searchResults = client.search({
       q: req.params.keyword,
@@ -81,8 +78,6 @@ router.get('/results/:keyword', (req, res) => {
 });
 
 router.get('/results/:keyword/:genre', (req, res) => {
-  // const keyword = JSON.parse(localStorage.getItem('keyword'));
-  // const genre = JSON.parse(localStorage.getItem('genres'));
   try {
     client.search({
       q: req.params.keyword,

@@ -24,6 +24,7 @@ const searchHandler = async (event) => {
     } else {
       alert(response.statusText);
     }
+
   } else if (keyWord) {
     const response = await fetch(`/results/${keyWord}`, {
       method: 'GET',
@@ -37,6 +38,7 @@ const searchHandler = async (event) => {
     } else {
       alert(response.statusText);
     }
+    
   } else {
     alert ('Search requires a keyword')
   }
