@@ -1,11 +1,11 @@
 <!-- Append body -->
 <div class="columns is-multiline">
 
-<!-- begin partial -->
-
-{{#each podcasts as |podcast| }}
+  <!-- begin partial -->
+  {{#each podcasts as |podcast| }}
   <div class="column is-full">
     <div class="container">
+      {{!-- <div class="container" data-stashItem="{{podcast}}"> --}}
       <article class="media">
         <figure class="media-left">
           <a href="{{podcast.link}}">
@@ -18,10 +18,11 @@
         <div class="media-content">
           <div class="content">
             <p>
-              <strong>{{podcast.title_original}}</strong> <small>{{podcast.publisher_original}}</a></small> <small>Number of
-                Episodes: {{podcast.total_episodes}}</small>
+              <strong>{{podcast.title_original}}</strong> <small>{{podcast.publisher}}</a></small>
               <br>
-              {{podcast.description_original}}
+              <small>{{podcast.episodes}} episodes</small> 
+              <br>
+              {{podcast.description}}
             </p>
           </div>
           <nav class="level">
@@ -40,7 +41,7 @@
             <div class="level-item has-text-centered">
               <div>
                 <p class="heading">Remove from stash</p>
-                <p class="title"><a id="removeBtn"><i class="fas fa-trash-alt"></i></a></p>
+                <p class="title "><i class="fas fa-trash-alt removeBtn""></i></p>
               </div>
             </div>
             <div class="level-item has-text-centered">

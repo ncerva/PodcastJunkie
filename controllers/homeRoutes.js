@@ -124,6 +124,12 @@ router.get('/results/:keyword/:genre', (req, res) => {
 });
 
 // /stash to render stash page
+router.get('/stash', (req, res) => {
+  try {
+    
+  }
+})
+
 // remove button function
 
 module.exports = router;
