@@ -58,7 +58,7 @@ router.post('/login', async (req, res) => {
       res.status(500).json(err);
     }
   });
-  5
+  
   // logout (DELETE)
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
