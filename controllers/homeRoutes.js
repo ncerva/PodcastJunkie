@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     res.redirect('/search');
     return;
   }
-  res.render('stash');
+  res.render('login');
 });
 
 router.get('/search', withAuth, (req, res) => {
