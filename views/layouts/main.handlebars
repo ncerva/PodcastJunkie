@@ -8,13 +8,16 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Questrial&display=swap" rel="stylesheet">
 
 </head>
-<img class='centerimg' src="/assets/PodcastJunkie.png" width="75" height="25">
 <!-- navbar-->
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-
+<img class='navbarimg' src="/assets/pod2.png" width="175" height="100">
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -34,14 +37,15 @@
     <div class="navbar-item">
       <div class="buttons">
         {{#if loggedIn}}  
-      <button class="button is-light">Logout</button>
+      <button class="button is-rounded">LOGOUT</button>
         {{else}}
-      <button href="/login" class="button is-dark">Login</button>
+      <button class="button is-rounded">LOGIN</button>
         {{/if}}
       </div>
     </div>
   </div>
 </nav>
+&nbsp;&nbsp;
 <!-- end navbar-->
 
       {{!-- Append body --}}
