@@ -5,13 +5,18 @@ background-color: black;
   font-size: 20px;
   font-family: 'Archivo Black', sans-serif;
 }
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
 /*welcome text*/
 .welcome{
-color: white;
-font-family: 'Archivo Black', sans-serif;
-font-size: 100px;
-text-align: left;
-}
+  color: white;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 100px;
+  }
 
 .hooked{
   font-family: 'Questrial', sans-serif;
@@ -35,13 +40,17 @@ text-align: left;
 }
   /* Bottom right text */
 .text-block {
-  position: absolute;
-  top: 150px;
-  right: 40px;
-  left: 800px;
+  position: fixed;
+  top: 140px;
+  left: 90px;
   color: white;
-  padding-left: 40px;
-  padding-right: 40px;
+}
+
+.login-block {
+  position: fixed;
+  top: 340px;
+  left: 90px;
+  color: rgb(255, 255, 255);
 }
 
 
