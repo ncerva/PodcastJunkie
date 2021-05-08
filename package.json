@@ -4,7 +4,8 @@
   "description": "## Group Members: ### Nicole Tribo, Reid Johnson, & Nayeli Cervantes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,7 @@
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^8.6.0",
     "express": "^4.17.1",
-    "express-handlebars": "^5.3.0",
+    "express-handlebars": "^5.3.2",
     "express-session": "^1.17.1",
     "handlebars": "^4.7.7",
     "initialize": "^7.3.1",
