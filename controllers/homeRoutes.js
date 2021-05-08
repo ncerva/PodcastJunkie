@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Client } = require('podcast-api');
 const dotenv = require('dotenv').config();
+const withAuth = require('../utils/auth')
 const client = Client({
   apiKey: process.env.API_KEY || null
 });
@@ -8,25 +9,27 @@ const client = Client({
 
 // Login route
 router.get('/', (req, res) => {
-  if (!req.session.loggedIn) {
-    res.render('login');
+  if (req.session.loggedIn) {
+    res.redirect('/search');
     return;
   }
-  res.render('stash');
+  res.render('login');
 });
 
-router.get('/search', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-  res.render('search');
+router.get('/search', withAuth, (req, res) => {
+  // if (!req.session.loggedIn) {
+  //   res.redirect('/');
+  //   return;
+  // }
+  res.render('search', {
+    loggedIn: req.session.loggedIn
+  });
 });
 module.exports = router;
 
 
 
-router.get('/results', (req, res) => {
+router.get('/results', withAuth, (req, res) => {
   try {
     const searchResults = client.search({
       q: 'wine',
@@ -49,7 +52,8 @@ router.get('/results', (req, res) => {
         })  ;
         // res.json(podcasts);  //uncomment this line for insomnia test
         res.render('results', {
-          podcasts
+          podcasts,
+          loggedIn: req.session.loggedIn
         });
       });
   }
@@ -59,7 +63,7 @@ router.get('/results', (req, res) => {
 });
 
 
-router.get('/results/:keyword', (req, res) => {
+router.get('/results/:keyword', withAuth, (req, res) => {
   try {
     const searchResults = client.search({
       q: req.params.keyword,
@@ -82,7 +86,8 @@ router.get('/results/:keyword', (req, res) => {
         })  ;
         // res.json(podcasts);  //uncomment this line for insomnia test
         res.render('results', {
-          podcasts
+          podcasts,
+          loggedIn: req.session.loggedIn
         });
       });
   }
@@ -91,7 +96,7 @@ router.get('/results/:keyword', (req, res) => {
   }
 });
 
-router.get('/results/:keyword/:genre', (req, res) => {
+router.get('/results/:keyword/:genre', withAuth, (req, res) => {
   try {
     client.search({
       q: req.params.keyword,
@@ -114,7 +119,8 @@ router.get('/results/:keyword/:genre', (req, res) => {
         })  ;
         // res.json(podcasts);  //uncomment this line for insomnia test
         res.render('results', {
-          podcasts
+          podcasts,
+          loggedIn: req.session.loggedIn
         });
       });
   }
