@@ -133,9 +133,21 @@ router.get('/results/:keyword/:genre', withAuth, (req, res) => {
 router.get('/stash', (req, res) => {
   try {
     
+    res.render('stash', {
+      podcasts,
+      loggedIn: req.session.loggedIn
+    });
+  }
+  catch (err) {
+    res.status(500).json(err);
   }
 })
 
 // remove button function
+router.post('/stash', (req,res) => {
+  req.body.destroy(() => {
+    
+  })
+})
 
 module.exports = router;
