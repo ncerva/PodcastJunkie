@@ -1,8 +1,8 @@
 const router = require('express').Router();
 
-const apiRoutes = require('./apiRoutes');
+const stashRoutes = require('./stashRoutes');
 
-router.use('/api', apiRoutes);
+router.use('/stash', stashRoutes);
 
 const userRoutes = require('./userRoutes');
 

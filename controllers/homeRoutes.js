@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     res.redirect('/search');
     return;
   }
-  res.render('login');
+  res.render('stash');
 });
 
 router.get('/search', withAuth, (req, res) => {
@@ -42,7 +42,14 @@ router.get('/results', withAuth, (req, res) => {
       safe_mode: 0,
     })
       .then((response) => {
-        const podcasts = response.data.results;
+        const podcasts = response.data.results.map(podcast => {
+          return {title_original: podcast.title_original,
+            link: podcast.website,
+            thumbnail: podcast.thumbnail,
+            publisher: podcast.publisher_original,
+            episodes: podcast.total_episodes,
+            description: podcast.description_original}
+        })  ;
         // res.json(podcasts);  //uncomment this line for insomnia test
         res.render('results', {
           podcasts,
@@ -69,7 +76,14 @@ router.get('/results/:keyword', withAuth, (req, res) => {
       safe_mode: 0,
     })
       .then((response) => {
-        const podcasts = response.data.results;
+        const podcasts = response.data.results.map(podcast => {
+          return {title_original: podcast.title_original,
+            link: podcast.website,
+            thumbnail: podcast.thumbnail,
+            publisher: podcast.publisher_original,
+            episodes: podcast.total_episodes,
+            description: podcast.description_original}
+        })  ;
         // res.json(podcasts);  //uncomment this line for insomnia test
         res.render('results', {
           podcasts,
@@ -95,7 +109,14 @@ router.get('/results/:keyword/:genre', withAuth, (req, res) => {
       safe_mode: 0,
     })
       .then((response) => {
-        const podcasts = response.data.results;
+        const podcasts = response.data.results.map(podcast => {
+          return {title_original: podcast.title_original,
+            link: podcast.website,
+            thumbnail: podcast.thumbnail,
+            publisher: podcast.publisher_original,
+            episodes: podcast.total_episodes,
+            description: podcast.description_original}
+        })  ;
         // res.json(podcasts);  //uncomment this line for insomnia test
         res.render('results', {
           podcasts,
@@ -107,5 +128,8 @@ router.get('/results/:keyword/:genre', withAuth, (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// /stash to render stash page
+// remove button function
 
 module.exports = router;
