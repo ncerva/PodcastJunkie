@@ -7,6 +7,10 @@
   
 #navbarBasicExample {
 background-color: black;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 30;
+  font-size: 20px;
 }
 
   body {
@@ -16,8 +20,11 @@ background-color: black;
     flex-direction: column;
     min-height: 100vh;
     justify-content: flex-start;
-    background-color: var(--quatrinary);
+    background-color: black
   }
+.fas {
+  color: white;
+}
 
   header {
     padding: 40px;
@@ -43,7 +50,7 @@ background-color: black;
   
   nav {
     display: flex;
-    background-color: var(--secondary);
+    background-color: black;
   }
   
   .menu-container {
@@ -135,19 +142,6 @@ background-color: black;
     border-radius: var(--border-radius);
     border-style: solid;
     border-width: medium;
-  }
-
-  .has-nuts {
-    color: var(--error)
-  }
-
-  .dish-card-header {
-    font-size: 1.5rem;
-    color: var(--tertiary);
-    margin: 0;
-    background-color: var(--light);
-    padding: 0.625rem;
-    border-bottom-style: solid;
   }
   
   .card-body {
