@@ -59,6 +59,10 @@ background-color: black;
     background-color: black;
   }
   
+.button {
+  color: rgb(75, 153, 243);
+}
+
   /* LAYOUT */
   .container {
     display: flex;
