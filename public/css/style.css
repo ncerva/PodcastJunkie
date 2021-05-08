@@ -1,12 +1,23 @@
-.centerimg {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-  
+/* navbar */
 #navbarBasicExample {
 background-color: black;
+  top: 30;
+  font-size: 20px;
+  font-family: 'Archivo Black', sans-serif;
+}
+/*welcome text*/
+.welcome{
+color: white;
+font-family: 'Archivo Black', sans-serif;
+font-size: 100px;
+text-align: left;
+}
+
+.hooked{
+  font-family: 'Questrial', sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 25px;
 }
 
   body {
@@ -16,144 +27,27 @@ background-color: black;
     flex-direction: column;
     min-height: 100vh;
     justify-content: flex-start;
-    background-color: var(--quatrinary);
+    background-color: black;
+    background-image: image('listening.jpeg');
   }
+.fas {
+  color: white;
+}
+  /* Bottom right text */
+.text-block {
+  position: absolute;
+  top: 150px;
+  right: 40px;
+  left: 800px;
+  color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+}
 
-  header {
-    padding: 40px;
-    text-align: center;
-    background: var(--primary);
-    color: var(--secondary);
-    border-bottom-style: solid;
-  }
-  
-  main {
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
-  }
-  
-  aside {
-    flex: 0;
-    background-color: var(--tertiary);
-    padding: 80px;
-    text-align: left;
-    color: var(--light);
-  }
-  
+
   nav {
     display: flex;
-    background-color: var(--secondary);
-  }
-  
-  .menu-container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 75%;
-    min-height: 100%;
-    margin: 0px auto;
-    border: 3px solid var(--primary);
-    border-radius: var(--border-radius);
-    border-style: solid;
-    border-width: medium;
-    background-color: var(--light);
-    color: var(--dark);
-    padding: 50px;
-    background-color: #ebebeb;
-  }
-  
-  .add-dish-container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 35%;
-    min-height: 100%;
-    min-width: 35%;
-    margin: 5px auto;
-    border: 3px solid var(--primary);
-    border-radius: var(--border-radius);
-    border-style: solid;
-    border-width: medium;
-    background-color: var(--light);
-    color: var(--dark);
-    padding: 50px;
-    text-align: center;
-    background-color: var(--tertiary);
-  }
-  
-  .edit-dish-container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 35%;
-    min-height: 100%;
-    min-width: 35%;
-    margin: 5px auto;
-    border: 3px solid var(--primary);
-    border-radius: var(--border-radius);
-    border-style: solid;
-    border-width: medium;
-    background-color: var(--light);
-    color: var(--dark);
-    padding: 50px;
-    text-align: center;
-    background-color: var(--tertiary);
-  }
-  
-  /* CARDS */
-  .dish-card {
-    margin: 20px;
-    flex: 0 1 300px;
-    padding: 5px;
-    width: 35%;
-    min-height: 100%;
-    min-width: 35%;
-    border: 3px solid var(--primary);
-    border-radius: var(--border-radius);
-    border-style: solid;
-    border-width: medium;
-    background-color: var(--light);
-    color: var(--dark);
-  }
-  
-  .menu-card {
-    margin: 50px;
-    flex: 0 1 300px;
-    padding: 5px;
-    border: 3px solid var(--dark);
-    border-radius: var(--border-radius);
-    border-style: groove;
-    border-width: thick;
-    background-color: var(--light);
-    color: var(--dark);
-  }
-  
-  .card-header {
-    color: var(--light);
-    margin: 0;
-    background-color: var(--secondary);
-    padding: 0.625rem;
-    border: 3px solid var(--primary);
-    border-radius: var(--border-radius);
-    border-style: solid;
-    border-width: medium;
-  }
-
-  .has-nuts {
-    color: var(--error)
-  }
-
-  .dish-card-header {
-    font-size: 1.5rem;
-    color: var(--tertiary);
-    margin: 0;
-    background-color: var(--light);
-    padding: 0.625rem;
-    border-bottom-style: solid;
-  }
-  
-  .card-body {
-    padding: 2.5%;
-    font-size: 1.4rem;
-    text-align: center;
+    background-color: black;
   }
   
   /* LAYOUT */
