@@ -9,9 +9,8 @@ background-color: black;
 .welcome{
 color: white;
 font-family: 'Archivo Black', sans-serif;
+font-size: 100px;
 text-align: left;
-font-size: 55px;
-text-align: center;
 }
 
 .hooked{
@@ -37,12 +36,15 @@ text-align: center;
   /* Bottom right text */
 .text-block {
   position: absolute;
-  top: 120px;
-  right: 20px;
+  top: 150px;
+  right: 40px;
+  left: 800px;
   color: white;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
+
+
   nav {
     display: flex;
     background-color: black;
