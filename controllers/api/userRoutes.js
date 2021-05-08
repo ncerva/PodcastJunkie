@@ -58,6 +58,7 @@ router.post('/login', async (req, res) => {
       res.status(500).json(err);
     }
   });
+  
   // logout (DELETE)
 // router.destroy('/logout', (req, res) => {
 //     if (req.session.loggedIn) {
