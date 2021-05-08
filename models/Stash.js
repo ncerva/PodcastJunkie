@@ -11,11 +11,11 @@ Stash.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
+    title_original: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    image: {
+    thumbnail: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -28,6 +28,9 @@ Stash.init(
       allowNull: false,
     },
     genre: {
+      type: DataTypes.STRING,
+    },
+    episodes: {
       type: DataTypes.STRING,
       allowNull: false,
     },
