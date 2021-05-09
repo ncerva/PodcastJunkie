@@ -1,9 +1,9 @@
 /* navbar */
 #navbarBasicExample {
-background-color: black;
+  background-color: black;
   top: 30;
   font-size: 20px;
-  font-family: 'Archivo Black', sans-serif;
+  font-family: "Archivo Black", sans-serif;
 }
 
 .responsive {
@@ -12,35 +12,35 @@ background-color: black;
 }
 
 /*welcome text*/
-.welcome{
+.welcome {
   color: white;
-  font-family: 'Archivo Black', sans-serif;
+  font-family: "Archivo Black", sans-serif;
   font-size: 100px;
-  }
+}
 
-.hooked{
-  font-family: 'Questrial', sans-serif;
+.hooked {
+  font-family: "Questrial", sans-serif;
   color: white;
   text-align: center;
   font-size: 25px;
 }
 
-  body {
-    font-family: Arial;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: flex-start;
-    background-color: black;
-    background-image: image('listening.jpeg');
-  }
+body {
+  font-family: Arial;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  background-color: black;
+  background-image: image("listening.jpeg");
+}
 .fas {
   color: white;
 }
-  /* Bottom right text */
+/* Bottom right text */
 .text-block {
-  position:absolute;
+  position: absolute;
   top: 100px;
   left: 90px;
   color: white;
@@ -53,22 +53,21 @@ background-color: black;
   color: rgb(255, 255, 255);
 }
 
+nav {
+  display: flex;
+  background-color: black;
+}
 
-  nav {
-    display: flex;
-    background-color: black;
-  }
+/* LAYOUT */
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: flex-start;
+  align-items: center;
+}
 
-  /* LAYOUT */
-  .container {
-    display: flex;
-    flex-flow: column wrap;
-    align-content: flex-start;
-    align-items: center;
-  }
-  
 #signup-submit {
-  color:white;
+  color: white;
   background-color: rgb(34, 143, 233);
   border: none;
   padding: 15px 32px;
@@ -79,7 +78,7 @@ background-color: black;
 }
 
 #login-submit {
-  color:white;
+  color: white;
   background-color: rgb(34, 143, 233);
   border: none;
   padding: 15px 32px;
