@@ -6,53 +6,53 @@
   <div class="column is-full">
     <div class="container">
       {{!-- <div class="container" data-stashItem="{{podcast}}"> --}}
-      <article class="media">
-        <figure class="media-left">
-          <a href="{{podcast.link}}">
-            <p class="image is-128x128" note="thumbnail">
-              <img
-                src="{{podcast.thumbnail}}">
-            </p>
-          </a>
-        </figure>
-        <div class="media-content">
-          <div class="content">
-            <p>
-              <strong>{{podcast.title_original}}</strong> <small>{{podcast.publisher}}</a></small>
-              <br>
-              <small>{{podcast.episodes}} episodes</small> 
-              <br>
-              {{podcast.description}}
-            </p>
+        <article class="media">
+          <figure class="media-left">
+            <a href="{{podcast.link}}">
+              <p class="image is-128x128" note="thumbnail">
+                <img src="{{podcast.thumbnail}}">
+              </p>
+            </a>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong>{{podcast.title_original}}</strong> <small>{{podcast.publisher}}</a></small>
+                <br>
+                <small>{{podcast.episodes}} episodes</small>
+                <br>
+                {{podcast.description}}
+              </p>
+            </div>
+            <nav class="level">
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Like</p>
+                  <p class="title"><i class="fas fa-heart"></i></p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Dislike</p>
+                  <p class="title"><i class="fas fa-heart-broken"></i></p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Remove from stash</p>
+                  <p class="title "><a><i class="fas fa-trash-alt removeBtn" data-stashid="{{id}}"></i></a></p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Likes</p>
+                  <p class="title">789</p>
+                </div>
+              </div>
+            </nav>
           </div>
-          <nav class="level">
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Like</p>
-                <p class="title"><i class="fas fa-heart"></i></p>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Dislike</p>
-                <p class="title"><i class="fas fa-heart-broken"></i></p>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Remove from stash</p>
-                <p class="title "><a><i class="fas fa-trash-alt removeBtn" data-stash-id="{{podcast.id}}"></i></a></p>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Likes</p>
-                <p class="title">789</p>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </article>
+        </article>
+      </div>
     </div>
   </div>
   {{/each}}
