@@ -18,9 +18,11 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.get('/', (req, res) => {
-  res.send("hello from stash")
+// remove button function
+router.post('/stash', (req,res) => {
+  req.body.destroy(() => {
+
+  })
 })
-//destroy-- remove from stash
 
 module.exports = router;
