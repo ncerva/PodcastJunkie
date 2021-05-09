@@ -21,6 +21,7 @@ const deleteStash = async (event) => {
         document.location.replace('/stash');
       } else {
         alert('Failed to delete project');
+        console.log(id);
       }
     }
   };
