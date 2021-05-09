@@ -11,9 +11,12 @@
 //         alert('Failed to remove');
 //       }
 // };
+
+
 const deleteStash = async (event) => {
-    if (event.target.hasAttribute('data-stash-id')) {
-      const id = event.target.getAttribute('data-stash-id');
+  event.preventDefault();
+    if (event.target.hasAttribute('data-stashid')) {
+      const id = event.target.getAttribute('data-stashid');
       const response = await fetch(`/api/stash/${id}`, {
         method: 'DELETE',
       });
@@ -26,6 +29,21 @@ const deleteStash = async (event) => {
     }
   };
 
-
+const returnId = async (event) => {
+  if (event.target.hasAttribute('data-stashid')) {
+    const id = event.target.getAttribute('data-stashid');
+    console.log(id);
+  } else {
+    console.log('not reading dataset');
+  }
+}
 // remove from stash 
-document.querySelector('.removeBtn').addEventListener('click', deleteStash);
+const deleteButtons = document.querySelectorAll('.removeBtn');
+
+const addDeleteListeners = (array) => {
+  for (i=0; i<array.length; i++) {
+    array[i].addEventListener('click', deleteStash);
+  }
+} 
+
+addDeleteListeners(deleteButtons);

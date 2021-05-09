@@ -24,7 +24,10 @@ router.post('/', async (req, res) => {
 router.delete('/:id', async (req,res) => {
   try {
     const stashData = await Stash.destroy({
-      where: {id: req.params.id},
+      where: {
+        id: req.params.id,
+
+      },
     }); 
     if (!stashData) {
       res.status(404).json({ message: 'No podcast found with this id'});
