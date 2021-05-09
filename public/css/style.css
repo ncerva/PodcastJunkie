@@ -58,10 +58,6 @@ background-color: black;
     display: flex;
     background-color: black;
   }
-  
-.button {
-  color: rgb(75, 153, 243);
-}
 
   /* LAYOUT */
   .container {
@@ -71,3 +67,6 @@ background-color: black;
     align-items: center;
   }
   
+#login-submit {
+  color: blue;
+}
