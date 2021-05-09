@@ -1,10 +1,7 @@
 // const removeStash = async (event) => {
 //     const response = await fetch('/stash', {
 //         method: 'DELETE',
-//         body: event.target.dataset.stashItem,
-//         headers: {
-//           'Content-type' : 'application/json',
-//         }
+//         body: event.target.dataset.stashId,
 //       });
 //     if (response.ok) {
 //         console.log(response);
@@ -14,7 +11,20 @@
 //         alert('Failed to remove');
 //       }
 // };
+const deleteStash = async (event) => {
+    if (event.target.hasAttribute('data-stash-id')) {
+      const id = event.target.getAttribute('data-stash-id');
+      const response = await fetch(`/api/stash/${id}`, {
+        method: 'DELETE',
+      });
+      if (response.ok) {
+        document.location.replace('/stash');
+      } else {
+        alert('Failed to delete project');
+      }
+    }
+  };
 
 
-// // remove from stash 
-// document.querySelector('.removeBtn').addEventListener('click', removeStash);
+// remove from stash 
+document.querySelector('.removeBtn').addEventListener('click', deleteStash);
