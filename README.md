@@ -21,6 +21,7 @@ When I view my stash I can see a list of podcasts I have saved to listen to.
 ```
 ## Technologies Used
 * API Used - Listen Notes
+* NPM
 * Framework - Bulma 
 * MySQL and Sequelize ORM
 * Node.js and Express.js
