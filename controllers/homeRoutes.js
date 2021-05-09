@@ -133,15 +133,15 @@ router.get('/results/:keyword/:genre', withAuth, (req, res) => {
 router.get('/stash', withAuth, async (req, res) => {
   try {
     const stashData = await Stash.findAll({
-      // where: {
-      //   user_id: req.session.user_id,
-      // },
-      // include: [
-      //   {
-      //     model: User,
-      //     attributes: ['id'],
-      //   },
-      // ],
+      where: {
+        user_id: req.session.user_id,
+      },
+      include: [
+        {
+          model: User,
+          attributes: ['id'],
+        },
+      ],
     });
       const podcasts = stashData.map((podcast) => podcast.get({ plain: true}));
     res.render('stash', {
