@@ -7,7 +7,8 @@ router.post('/', async (req, res) => {
   try {
     console.log(req.body)
     const StashData = await Stash.create(
-      req.body
+      req.body,
+      
     );
     req.session.save(() => {
       res.status(200).json(StashData);
