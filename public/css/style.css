@@ -15,14 +15,14 @@
 .welcome {
   color: white;
   font-family: "Archivo Black", sans-serif;
-  font-size: 100px;
+  font-size: 8vw;
 }
 
 .hooked {
   font-family: "Questrial", sans-serif;
   color: white;
   text-align: center;
-  font-size: 25px;
+  font-size: 2vw;
 }
 
 body {
@@ -48,7 +48,7 @@ body {
 
 .login-block {
   position: absolute;
-  top: 340px;
+  top: 400px;
   left: 90px;
   color: rgb(255, 255, 255);
 }
@@ -90,7 +90,7 @@ nav {
 
 #signup-block {
   position: absolute;
-  top: 340px;
+  top: 400px;
   left: 400px;
   color: white;
 }

@@ -5,7 +5,8 @@ Our application will allow users to search for podcasts by keyword and genre and
 
 ## User Story
 ```
-As an employee who commutes to work for about an hour everyday, 
+As an avid podcast listener,
+
 I want to be able to search and discover new podcasts by keyword and genre. 
 
 When I search for podcasts, I am given a list of results matching my query.
@@ -21,6 +22,8 @@ When I view my stash I can see a list of podcasts I have saved to listen to.
 ## Technologies Used
 * API Used - Listen Notes
 * Framework - Bulma 
+* MySQL and Sequelize ORM
+* Node.js and Express.js
 
 ## Future Developments
 
