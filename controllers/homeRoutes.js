@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth')
 const client = Client({
   apiKey: process.env.API_KEY || null
 });
-
+const { Stash, User } = require('../models');
 
 // Login route
 router.get('/', (req, res) => {
@@ -49,7 +49,7 @@ router.get('/results', withAuth, (req, res) => {
             publisher: podcast.publisher_original,
             episodes: podcast.total_episodes,
             description: podcast.description_original}
-        })  ;
+        });
         // res.json(podcasts);  //uncomment this line for insomnia test
         res.render('results', {
           podcasts,
@@ -83,7 +83,7 @@ router.get('/results/:keyword', withAuth, (req, res) => {
             publisher: podcast.publisher_original,
             episodes: podcast.total_episodes,
             description: podcast.description_original}
-        })  ;
+        });
         // res.json(podcasts);  //uncomment this line for insomnia test
         res.render('results', {
           podcasts,
@@ -130,6 +130,28 @@ router.get('/results/:keyword/:genre', withAuth, (req, res) => {
 });
 
 // /stash to render stash page
-// remove button function
-0
+router.get('/stash', withAuth, async (req, res) => {
+  try {
+    const stashData = await Stash.findAll({
+      // where: {
+      //   user_id: req.session.user_id,
+      // },
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: ['id'],
+      //   },
+      // ],
+    });
+      const podcasts = stashData.map((podcast) => podcast.get({ plain: true}));
+    res.render('stash', {
+      podcasts,
+      loggedIn: req.session.loggedIn
+    });
+  }
+  catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
