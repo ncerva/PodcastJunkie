@@ -1,17 +1,4 @@
-// const removeStash = async (event) => {
-//     const response = await fetch('/stash', {
-//         method: 'DELETE',
-//         body: event.target.dataset.stashId,
-//       });
-//     if (response.ok) {
-//         console.log(response);
-//         alert('Removed from stash!');
-//       } else {
-//         console.log(response);
-//         alert('Failed to remove');
-//       }
-// };
-
+const deleteButtons = document.querySelectorAll('.removeBtn');
 
 const deleteStash = async (event) => {
   event.preventDefault();
@@ -28,17 +15,6 @@ const deleteStash = async (event) => {
       }
     }
   };
-
-const returnId = async (event) => {
-  if (event.target.hasAttribute('data-stashid')) {
-    const id = event.target.getAttribute('data-stashid');
-    console.log(id);
-  } else {
-    console.log('not reading dataset');
-  }
-}
-// remove from stash 
-const deleteButtons = document.querySelectorAll('.removeBtn');
 
 const addDeleteListeners = (array) => {
   for (i=0; i<array.length; i++) {
