@@ -88,3 +88,10 @@ background-color: black;
   font-size: 16px;
   border-radius: 12px;
 }
+
+#signup-block {
+  position: absolute;
+  top: 340px;
+  left: 400px;
+  color: white;
+}
