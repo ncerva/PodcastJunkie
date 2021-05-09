@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
 });
 
 // remove button function
-router.delete('/stash/:id', async (req,res) => {
+router.delete('/:id', async (req,res) => {
   try {
     const stashData = await Stash.destroy({
       where: {id: req.params.id},
