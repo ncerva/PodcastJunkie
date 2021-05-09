@@ -49,7 +49,7 @@ router.get('/results', withAuth, (req, res) => {
             publisher: podcast.publisher_original,
             episodes: podcast.total_episodes,
             description: podcast.description_original}
-        })  ;
+        });
         // res.json(podcasts);  //uncomment this line for insomnia test
         res.render('results', {
           podcasts,
@@ -129,75 +129,6 @@ router.get('/results/:keyword/:genre', withAuth, (req, res) => {
   }
 });
 
-// /stash to render stash page
-router.get('/stash', (req, res) => {
-  try {
-    
-    res.render('stash', {
-      podcasts,
-      loggedIn: req.session.loggedIn
-    });
-  }
-  catch (err) {
-    res.status(500).json(err);
-  }
-})
 
-// remove button function
-router.post('/stash', (req,res) => {
-  req.body.destroy(() => {
-    
-  })
-})
-
-router.get('/results/:keyword', (req, res) => {
-  try {
-    const searchResults = client.search({
-      q: req.params.keyword,
-      sort_by_date: 0,
-      type: 'podcast',
-      offset: 0,
-      published_after: 0,
-      only_in: 'title,description',
-      language: 'English',
-      safe_mode: 0,
-    })
-      .then((response) => {
-        const podcasts = response.data.results;
-        // res.json(podcasts);  //uncomment this line for insomnia test
-        res.render('results', {
-          podcasts
-        });
-      });
-  }
-  catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/results/:keyword/:genre', (req, res) => {
-  try {
-    client.search({
-      q: req.params.keyword,
-      sort_by_date: 0,
-      type: 'podcast',
-      offset: 0,
-      genre_ids: req.params.genre,
-      only_in: 'title,description',
-      language: 'English',
-      safe_mode: 0,
-    })
-      .then((response) => {
-        const podcasts = response.data.results;
-        // res.json(podcasts);  //uncomment this line for insomnia test
-        res.render('results', {
-          podcasts
-        });
-      });
-  }
-  catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 module.exports = router;

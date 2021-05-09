@@ -1,12 +1,9 @@
 //will need a query selector to add results to stash-- on a button
-
+const addBtn = document.querySelector('.addBtn')
 const createStash = async (event) => {
-    const button = document.querySelector('.addBtn')
-    const stash = button.dataset.stashItem
-    //const title_original = stash.title_original
-    debugger
+    const stash = addBtn.dataset.stashItem
     console.log(event.target)
-console.log(event.target.dataset.stashItem)
+    console.log(event.target.dataset.stashItem)
     const response = await fetch('/api/stash', {
       method: 'POST',
       body: event.target.dataset.stashItem,
