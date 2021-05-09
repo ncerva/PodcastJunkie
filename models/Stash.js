@@ -20,7 +20,7 @@ Stash.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING(1000),
+      type: DataTypes.STRING(1000), 
       allowNull: false,
     },
     publisher: {
@@ -37,6 +37,13 @@ Stash.init(
    link: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      },
     },
   },
   {
