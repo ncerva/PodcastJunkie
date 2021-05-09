@@ -22,7 +22,6 @@ When I view my stash I can see a list of podcasts I have saved to listen to.
 * API Used - Listen Notes
 * Framework - Bulma 
 
-## How it Works
 ## Future Developments
 
 # Group Members:
