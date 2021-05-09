@@ -95,6 +95,13 @@ nav {
   color: white;
 }
 
-.is-full {
-  font-family:"Questrial", sans-serif;
+#emptystash {
+  position: fixed;
+  top: 50%;
+  left: 40%;
+  margin-top: -50px;
+  margin-left: -100px;
+  background-color: rgb(25, 149, 250);
+  color: white;
+  font-family: "Archivo Black", sans-serif;
 }
