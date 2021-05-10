@@ -21,12 +21,19 @@ When I view my stash I can see a list of podcasts I have saved to listen to.
 ```
 ## Technologies Used
 * API Used - Listen Notes
-* NPM
-* Framework - Bulma 
+* Listen Notes Node Module
+* Framework - Bulma
+* Express
 * MySQL and Sequelize ORM
-* Node.js and Express.js
+* Handlebars 
+* Bcrypt 
+
 
 ## Future Developments
+* Ability to record and upload your own podcast *cough cough David*
+* Rating System
+* Ability to share to social media
+
 
 # Group Members:
 ## Nicole Tribo
@@ -39,6 +46,7 @@ When I view my stash I can see a list of podcasts I have saved to listen to.
 ###
 
 ![Alt text](./public/assets/ScreenShot.png)
-
+![Alt text](./public/assets/search.png)
+![Alt text](./public/assets/stash.png)
 ## 
 
