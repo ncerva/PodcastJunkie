@@ -98,9 +98,6 @@ nav {
 #emptystash {
   position: fixed;
   top: 50%;
-  left: 40%;
-  margin-top: -50px;
-  margin-left: -100px;
   background-color: rgb(135, 173, 231);
   color: white;
   font-family: "Archivo Black", sans-serif;
@@ -128,9 +125,28 @@ a:hover {
 }
 
 /*search page*/
-.field{
+.control {
+  margin-left: auto;
+    margin-right: auto;
+    width: 12em
+}
+
+.little-box {
 
 }
-.control {
+
+.label {
+  margin-left: auto;
+    margin-right: auto;
+    width: 12em
+}
+
+.help {
+  margin-left: auto;
+    margin-right: auto;
+    width: 12em
+}
+
+#genre-select {
   
 }
