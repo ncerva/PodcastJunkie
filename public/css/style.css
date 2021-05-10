@@ -150,3 +150,13 @@ a:hover {
 #genre-select {
   
 }
+
+#search-box{
+  background-color: rgb(135, 173, 231);
+  margin: auto;
+  padding: 10px;
+  top: -150px;
+  right: 500px;
+  width: 50em;
+  border-radius: 8px;
+}
