@@ -1,66 +1,70 @@
+&nbsp;&nbsp;
 <!-- Append body -->
+
 <div class="columns is-multiline">
-
-  <!-- begin partial -->
-  {{#if podcasts.length}}
-  {{#each podcasts as |podcast| }}
-  <div class="column is-full">
-    <div class="container">
-      {{!-- <div class="container" data-stashItem="{{podcast}}"> --}}
-        <article class="media">
-          <figure class="media-left">
-            <a href="{{podcast.link}}">
-              <p class="image is-128x128" note="thumbnail">
-                <img src="{{podcast.thumbnail}}">
-              </p>
-            </a>
-          </figure>
-          <div class="media-content">
-            <div class="content">
-              <p>
-                <strong>{{podcast.title_original}}</strong> <small>{{podcast.publisher}}</a></small>
-                <br>
-                <small>{{podcast.episodes}} episodes</small>
-                <br>
-                {{podcast.description}}
-              </p>
+  <div class='container'>
+    <!-- begin partial -->
+    {{#if podcasts.length}}
+    {{#each podcasts as |podcast| }}
+    <div class="column is-full">
+      <div class="container">
+        {{!-- <div class="container" data-stashItem="{{podcast}}"> --}}
+          <article class="media">
+            <figure class="media-left">
+              <a href="{{podcast.link}}">
+                <p class="image is-128x128" note="thumbnail">
+                  <img src="{{podcast.thumbnail}}">
+                </p>
+              </a>
+            </figure>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>{{podcast.title_original}}</strong> <small>{{podcast.publisher}}</a></small>
+                  <br>
+                  <small>{{podcast.episodes}} episodes</small>
+                  <br>
+                  {{podcast.description}}
+                </p>
+              </div>
+              <nav class="level">
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Like</p>
+                    <p class="title"><a><i class="fas fa-heart"></i></a></p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Dislike</p>
+                    <p class="title"><a><i class="fas fa-heart-broken"></i></a></p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Remove from stash</p>
+                    <p class="title "><a><i class="fas fa-trash-alt removeBtn" data-stashid="{{id}}"></i></a></p>
+                  </div>
+                </div>
+              </nav>
             </div>
-            <nav class="level">
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading">Like</p>
-                  <p class="title"><a><i class="fas fa-heart"></i></a></p>
-                </div>
-              </div>
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading">Dislike</p>
-                  <p class="title"><a><i class="fas fa-heart-broken"></i></a></p>
-                </div>
-              </div>
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading">Remove from stash</p>
-                  <p class="title "><a><i class="fas fa-trash-alt removeBtn" data-stashid="{{id}}"></i></a></p>
-                </div>
-              </div>
-            </nav>
-          </div>
-        </article>
+          </article>
+
+
+      {{/each}}
+      {{else}}
+      <div class="notification" id='emptystash'>
+        <p>You're stash is currently empty! Go find some rad podcasts here:
+          <a href="/search"><i class="fab fa-searchengin"></i></a>
+        </p>
+
+
+        {{/if}}
       </div>
-    
-  
-  {{/each}}
-  {{else}}
-  <div class="notification" id='emptystash'>
-    <p>You're stash is currently empty! Go find some rad podcasts here:
-      <a href="/search"><i class="fab fa-searchengin"></i></a></p> 
-
-
-  {{/if}}
+    </div>
+    <!-- end partial -->
   </div>
 </div>
-  <!-- end partial -->
 </div>
 </div>
 <!--  end body   -->

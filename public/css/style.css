@@ -32,8 +32,8 @@ body {
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
-  background-color: black;
   background-image: image("listening.jpeg");
+  background-color: black;
 }
 .fas {
   color: white;
@@ -68,7 +68,7 @@ nav {
 
 #signup-submit {
   color: white;
-  background-color: rgb(34, 143, 233);
+  background-color: rgb(135, 173, 231);
   border: none;
   padding: 15px 32px;
   text-align: center;
@@ -79,7 +79,7 @@ nav {
 
 #login-submit {
   color: white;
-  background-color: rgb(34, 143, 233);
+  background-color: rgb(135, 173, 231);
   border: none;
   padding: 15px 32px;
   text-align: center;
@@ -101,7 +101,36 @@ nav {
   left: 40%;
   margin-top: -50px;
   margin-left: -100px;
-  background-color: rgb(25, 149, 250);
+  background-color: rgb(135, 173, 231);
   color: white;
   font-family: "Archivo Black", sans-serif;
+  font-size: larger;
+}
+
+.heading {
+  color: white;
+}
+
+.content {
+  color: white;
+  padding: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 6px;
+}
+
+a:hover {
+  background-color: rgb(135, 173, 231);
+  padding: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 6px;
+}
+
+/*search page*/
+.field{
+
+}
+.control {
+  
 }
