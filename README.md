@@ -1,4 +1,7 @@
 # PodcastJunkie
+# Links
+https://github.com/ncerva/PodcastJunkie
+https://polar-gorge-02083.herokuapp.com/
 
 ## Description
 Our application will allow users to search for podcasts by keyword and genre and will return a list of podcasts fitting those results. On the results page the user can view information about the podcast, including a summary of the podcast, genre info, host info and network info. The user can then choose to add a podcast from that list to a library **(“My Stash”)** and have the option to like or dislike the podcast as a form of rating. When the user views their **Stash** they see the list of podcasts that they have saved with a link to listen to the podcast.
